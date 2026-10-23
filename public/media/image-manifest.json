@@ -1,0 +1,116 @@
+{
+  "project": "Vanishree Kulkarni Portfolio",
+  "theme": "Peach + Coral Portfolio (Lohitha template)",
+  "verifiedSource": "https://vanishreekulkarni.in/",
+  "generatedDate": "2026-10-23",
+  "assets": [
+    {
+      "localPath": "media/photos/homepage/vani_hero_final.png",
+      "originalSourceUrl": "https://vanishreekulkarni.in/photos/ -> IMG_20240922_155640.jpg",
+      "dimensions": "642x468",
+      "aspectRatio": "1.37:1 (cutout)",
+      "section": "Hero",
+      "description": "High-resolution transparent cutout portrait in peacock-blue velvet dress with hands resting under chin. Positioned naturally over the animated peach blob.",
+      "licenseStatus": "Official Portfolio Asset (Direct from artist website)"
+    },
+    {
+      "localPath": "media/photos/gallery/IMG-20240823-WA0016.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/photos/ (Photo 1)",
+      "dimensions": "720x842",
+      "aspectRatio": "0.85:1 (vertical)",
+      "section": "About (Card 1 — Screen Actress)",
+      "description": "Dramatic authentic portrait in traditional plum silk saree, gold jewelry, temple ornaments and nose ring. Screen age / maternal negative role.",
+      "licenseStatus": "Official Portfolio Asset (Direct from artist website)"
+    },
+    {
+      "localPath": "media/photos/about/voice_over.webp",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Voice Artistry section)",
+      "dimensions": "800x533",
+      "aspectRatio": "1.5:1",
+      "section": "About (Card 2 — Voice & Dubbing Artist) & Journey (Milestone 2)",
+      "description": "Studio recording session showing Vanishree behind professional studio condenser microphone and headphones.",
+      "licenseStatus": "Official Portfolio Asset (Direct from artist website)"
+    },
+    {
+      "localPath": "media/photos/about/theatre.webp",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Theatre section)",
+      "dimensions": "800x480",
+      "aspectRatio": "1.67:1",
+      "section": "About (Card 3 — Theatre Performer), Selected Work (Card 6) & Journey (Milestone 1)",
+      "description": "Live theatrical performance on stage in traditional saree and spectacles under direction of Padma Shri M. S. Sathyu.",
+      "licenseStatus": "Official Portfolio Asset (Direct from artist website)"
+    },
+    {
+      "localPath": "media/photos/gallery/youtube_avatar.jpg",
+      "originalSourceUrl": "https://www.youtube.com/@reelvani (Official YouTube channel linked on vanishreekulkarni.in/contact/)",
+      "dimensions": "900x900",
+      "aspectRatio": "1:1",
+      "section": "About (Card 4 — Character Artist)",
+      "description": "Warm, radiant portrait in black silk saree with emerald-diamond necklace and jhumkas smiling directly towards camera.",
+      "licenseStatus": "Public Artist Profile Asset (Official YouTube Channel)"
+    },
+    {
+      "localPath": "media/photos/homepage/vani_contact_sticker.png",
+      "originalSourceUrl": "https://www.youtube.com/@reelvani (Cutout & styled sticker with contour)",
+      "dimensions": "900x900",
+      "aspectRatio": "1:1 (sticker)",
+      "section": "Contact Section (Corner Sticker)",
+      "description": "Warm smiling cutout of Vanishree with Peach-Portfolio white contour border, overlapping the coral contact panel naturally below 'say hello! 🎭'.",
+      "licenseStatus": "Derived from Official Artist YouTube Asset"
+    },
+    {
+      "localPath": "media/photos/about/ayyana_mane.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Work section)",
+      "dimensions": "600x400",
+      "aspectRatio": "1.5:1",
+      "section": "Selected Work (Card 1 — Ayyana Mane) & Journey (Milestone 5)",
+      "description": "Official Zee5 streaming series theatrical poster featuring Vanishree in pivotal maternal character role.",
+      "licenseStatus": "Official Production Artwork"
+    },
+    {
+      "localPath": "media/photos/about/7fd61739-8a3f-4ae0-a1f9-3b4bf531dcc6.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Work section)",
+      "dimensions": "500x752",
+      "aspectRatio": "0.66:1",
+      "section": "Selected Work (Card 2 — Night Out) & Journey (Milestone 4)",
+      "description": "Official Kannada theatrical feature film poster for 'Night Out'.",
+      "licenseStatus": "Official Theatrical Release Artwork"
+    },
+    {
+      "localPath": "media/photos/about/NN.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Work section)",
+      "dimensions": "640x360",
+      "aspectRatio": "1.78:1",
+      "section": "Selected Work (Card 3 — Neenade Naa) & Journey (Milestone 3)",
+      "description": "Official Zee Kannada primetime drama series promotional banner.",
+      "licenseStatus": "Broadcast Network Artwork"
+    },
+    {
+      "localPath": "media/photos/about/ba702ec4-ae32-4638-a088-7e8525657475.webp",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Work section)",
+      "dimensions": "720x960",
+      "aspectRatio": "0.75:1",
+      "section": "Selected Work (Card 4 — Finding Us Again)",
+      "description": "Digital vertical micro-drama series poster.",
+      "licenseStatus": "Digital Production Artwork"
+    },
+    {
+      "localPath": "media/photos/about/gejje.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (Work section)",
+      "dimensions": "640x360",
+      "aspectRatio": "1.78:1",
+      "section": "Selected Work (Card 5 — Star Suvarna & Vruksham)",
+      "description": "Production still from dramatic short film 'Vruksham' / television serial.",
+      "licenseStatus": "Festival / Broadcast Production Still"
+    },
+    {
+      "localPath": "media/photos/seo/vani.jpg",
+      "originalSourceUrl": "https://vanishreekulkarni.in/ (SEO metadata & branding)",
+      "dimensions": "642x468",
+      "aspectRatio": "1.37:1",
+      "section": "Navigation Brand Icon, Loader Avatar & Social OpenGraph",
+      "description": "Vanishree profile avatar icon.",
+      "licenseStatus": "Official Portfolio Asset"
+    }
+  ]
+}

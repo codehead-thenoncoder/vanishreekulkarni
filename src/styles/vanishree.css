@@ -1,0 +1,468 @@
+/* ════════════════════════════════════════════════════════════
+   Targeted Visual Refinements — Vanishree Kulkarni Portfolio
+   1. Hero portrait uncompressed & naturally framed
+   2. Original About portrait card restored
+   3. Contact-section portrait balanced & correctly aligned
+   ════════════════════════════════════════════════════════════ */
+
+/* ────────────────────────────────────────────────────────────
+   1. HERO PORTRAIT FIXES
+   ──────────────────────────────────────────────────────────── */
+.hr-visual {
+  position: relative;
+  height: min(78vh, 720px);
+  clip-path: inset(-40% -40% 0 -40%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hr-blob {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 72%;
+  max-height: 520px;
+  background: var(--peach);
+  border-radius: 48% 52% 0 0 / 55% 50% 0 0;
+  animation: blob 12s ease-in-out infinite alternate;
+  box-shadow: inset 0 -40px 80px -40px rgba(255, 128, 102, 0.25);
+}
+
+.hr-blob::before {
+  content: '';
+  position: absolute;
+  inset: 9% 12% auto auto;
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--coral);
+  opacity: 0.9;
+}
+
+/* Authentic full upper-body cutout: naturally framed, head breaking crest of peach blob */
+.hr-person.hr-person-cutout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  bottom: -14px;
+  width: auto;
+  height: auto;
+  max-width: 105%;
+  max-height: 94%;
+  aspect-ratio: 642 / 468;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 26px 36px rgba(255, 128, 102, 0.38));
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. RESTORE ORIGINAL ABOUT PORTRAIT CARD
+   ──────────────────────────────────────────────────────────── */
+/* Prevent .stack from stretching to the full height of long biography text */
+.ab-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.stack {
+  position: relative;
+  width: min(100%, 390px);
+  height: 500px;
+  min-height: 480px;
+  align-self: center;
+  justify-self: center;
+  margin: 3vh 0;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Restore exact card shape, 18px radius, 12px inset, 70px bottom white border & soft shadow */
+.stack-card {
+  position: absolute;
+  inset: 0 0 8% 0;
+  margin: 0;
+  padding: 12px 12px 70px;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  rotate: calc(var(--pos) * 5deg - 4deg);
+  translate: calc(var(--pos) * 14px) calc(var(--pos) * 8px);
+  transition: rotate 0.6s var(--ease), translate 0.6s var(--ease);
+}
+
+/* Frame Vanishree's genuine portrait photos cleanly with 10px inner corner */
+.stack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 10px;
+}
+
+.stack-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+.stack-card:not(.is-top) figcaption {
+  opacity: 0;
+}
+
+.role-kicker {
+  display: block;
+  font-family: var(--hand);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--coral-d);
+}
+
+.role-name {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.stack-hint {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  bottom: -44px;
+  font-family: var(--hand);
+  font-size: 24px;
+  color: var(--coral-d);
+  rotate: -3deg;
+  white-space: nowrap;
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. CONTACT SECTION — PROPORTIONATE SCALE & ONE-LINE EMAIL
+   ──────────────────────────────────────────────────────────── */
+.ct-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 44px);
+  padding: clamp(28px, 4vw, 52px);
+  border-radius: 36px;
+  align-items: center;
+}
+
+.ct-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+}
+
+.ct-copy .h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.ct-copy p {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 34em;
+  opacity: 0.94;
+}
+
+.ct-location {
+  font-size: 14.5px;
+  margin-top: 10px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* Keep email text on ONE clean line with proportionate size */
+.ct-mail {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.ct-mail a {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 23px);
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid var(--white);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  word-break: normal;
+}
+
+.ct-mail button {
+  flex-shrink: 0;
+  height: 32px;
+  padding: 0 13px;
+  font-size: 12.5px;
+}
+
+.ct-links {
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.ct-media {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Prominent, large portrait scale filling card height with natural overlap */
+.ct-sticker {
+  position: absolute;
+  right: -3%;
+  bottom: calc(-1 * clamp(24px, 3.5vw, 48px));
+  height: 126%;
+  max-height: 480px;
+  width: auto;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: drop-shadow(0 24px 36px rgba(48, 34, 31, 0.32));
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ct-bubble {
+  position: absolute;
+  z-index: 3;
+  right: clamp(140px, 16vw, 220px);
+  left: auto;
+  bottom: clamp(340px, 30vw, 410px);
+  top: auto;
+  font-family: var(--hand);
+  font-size: 24px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transform: rotate(-6deg);
+  white-space: nowrap;
+}
+
+.ct-bubble::after {
+  content: '';
+  position: absolute;
+  right: 24px;
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  background: var(--white);
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   NAVIGATION & SHOWREEL MODAL
+   ──────────────────────────────────────────────────────────── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-showreel-btn {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 14.5px;
+  border: 2px solid var(--coral);
+  color: var(--coral-d);
+  background: rgba(255, 255, 255, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s, color 0.3s, transform 0.3s var(--ease);
+}
+
+.nav-showreel-btn:hover {
+  background: var(--coral);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.wk-role-label {
+  font-size: 13.5px;
+  color: var(--coral-d);
+  font-weight: 600;
+  margin-top: -2px;
+}
+
+.showreel-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(48, 34, 31, 0.82);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s var(--ease);
+}
+
+.showreel-modal-dialog {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg);
+  border-radius: 28px;
+  padding: clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--peach-2);
+}
+
+.showreel-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--peach);
+  color: var(--coral-d);
+  font-size: 28px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.showreel-modal-close:hover {
+  background: var(--coral);
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+.showreel-modal-header {
+  margin-bottom: 18px;
+}
+
+.showreel-modal-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 28px);
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+.showreel-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.showreel-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE (MOBILE & TABLET ADJUSTMENTS)
+   ──────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .nav-showreel-btn {
+    display: none;
+  }
+
+  .hr-visual {
+    height: 52vh;
+    margin-top: 14px;
+  }
+
+  .hr-person.hr-person-cutout {
+    max-width: 96%;
+    max-height: 94%;
+    bottom: -10px;
+  }
+
+  .stack {
+    width: 84%;
+    height: auto;
+    aspect-ratio: 4 / 5.2;
+    min-height: 0;
+    margin: 0 auto 50px;
+  }
+
+  .ct-card {
+    grid-template-columns: 1fr;
+    margin-top: 4vh;
+    padding-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .ct-mail {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ct-mail a {
+    font-size: 15.5px;
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  .ct-media {
+    min-height: 290px;
+    margin-top: 24px;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  .ct-sticker {
+    position: relative;
+    right: auto;
+    bottom: 0;
+    translate: none;
+    width: min(320px, 88%);
+    max-width: 88%;
+    height: auto;
+    max-height: 330px;
+    margin: 0 auto;
+    object-position: center bottom;
+  }
+
+  .ct-bubble {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    top: -24px;
+    font-size: 22px;
+  }
+}

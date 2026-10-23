@@ -45,35 +45,58 @@ export default function Journey() {
     const ro = new ResizeObserver(build)
     ro.observe(list.current)
     addEventListener('load', build)
-    return () => { ro.disconnect(); removeEventListener('load', build) }
+    return () => {
+      ro.disconnect()
+      removeEventListener('load', build)
+    }
   }, [])
 
   // draw the road + move the avatar with scroll
   useEffect(() => {
     if (!d) return
     const path = trail.current
+    if (!path) return
     const len = path.getTotalLength()
     path.style.strokeDasharray = `${len}`
     const st = ScrollTrigger.create({
-      trigger: list.current, start: 'top 65%', end: 'bottom 65%', scrub: 0.4,
+      trigger: list.current,
+      start: 'top 65%',
+      end: 'bottom 65%',
+      scrub: 0.4,
       onUpdate: (s) => {
         path.style.strokeDashoffset = `${len * (1 - s.progress)}`
         const pt = path.getPointAtLength(len * s.progress)
-        walker.current.style.transform = `translate(${pt.x}px, ${pt.y}px)`
+        if (walker.current) {
+          walker.current.style.transform = `translate(${pt.x}px, ${pt.y}px)`
+        }
       },
     })
     path.style.strokeDashoffset = `${len}`
     const p0 = path.getPointAtLength(0)
-    walker.current.style.transform = `translate(${p0.x}px, ${p0.y}px)`
+    if (walker.current) {
+      walker.current.style.transform = `translate(${p0.x}px, ${p0.y}px)`
+    }
     ScrollTrigger.refresh()
     return () => st.kill()
   }, [d])
 
   useGSAP(() => {
-    gsap.to('.jr-title .squiggle path', { strokeDashoffset: 0, duration: 1.2, ease: 'power2.inOut', scrollTrigger: { trigger: '.jr-title', start: 'top 80%' } })
+    gsap.to('.jr-title .squiggle path', {
+      strokeDashoffset: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+      scrollTrigger: { trigger: '.jr-title', start: 'top 80%' },
+    })
     gsap.utils.toArray('.jr-item', root.current).forEach((it, i) => {
       const tl = gsap.timeline({ scrollTrigger: { trigger: it, start: 'top 78%' } })
-      tl.from(it.querySelector('.polaroid'), { y: 60, rotate: i % 2 ? 14 : -14, scale: 0.8, opacity: 0, duration: 1.1, ease: 'back.out(1.6)' })
+      tl.from(it.querySelector('.polaroid'), {
+        y: 60,
+        rotate: i % 2 ? 14 : -14,
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.1,
+        ease: 'back.out(1.6)',
+      })
         .from(it.querySelector('.jr-card'), { x: i % 2 ? -50 : 50, opacity: 0, duration: 1 }, 0.15)
         .from(it.querySelector('.jr-dot'), { scale: 0, duration: 0.6, ease: 'back.out(3)' }, 0.1)
     })
@@ -83,21 +106,31 @@ export default function Journey() {
     <section className="journey section" id="journey" ref={root}>
       <div className="wrap">
         <div className="sec-head center">
-          <span className="pill">My journey</span>
-          <h2 className="h2 jr-title">The story <span className="hl">so far<Squiggle /></span></h2>
-          <p className="hand sec-note">follow the road ↓</p>
+          <span className="pill">Artistic Journey</span>
+          <h2 className="h2 jr-title">
+            The story <span className="hl">so far<Squiggle /></span>
+          </h2>
+          <p className="hand sec-note">follow the path ↓</p>
         </div>
         <ol className="jr-list" ref={list}>
-          <svg className="jr-map" width={box.w} height={box.h} viewBox={`0 0 ${box.w || 1} ${box.h || 1}`} aria-hidden="true">
+          <svg
+            className="jr-map"
+            width={box.w}
+            height={box.h}
+            viewBox={`0 0 ${box.w || 1} ${box.h || 1}`}
+            aria-hidden="true"
+          >
             <path ref={road} d={d} className="jr-road" />
             <path ref={trail} d={d} className="jr-trail" />
           </svg>
-          <span className="jr-walker" ref={walker} aria-hidden="true"><img src={profile.avatar} alt="" /></span>
+          <span className="jr-walker" ref={walker} aria-hidden="true">
+            <img src={profile.avatar} alt="Vanishree Kulkarni" />
+          </span>
           {journey.map((j, i) => (
             <li className={`jr-item ${i % 2 ? 'flip' : ''}`} key={j.title}>
               <figure className="polaroid" style={{ '--r': `${i % 2 ? 4 : -4}deg` }}>
                 <span className="tape" />
-                <img src={j.photo} alt="" loading="lazy" />
+                <img src={j.photo} alt={j.title} loading="lazy" />
                 <figcaption className="hand">{j.note}</figcaption>
               </figure>
               <span className="jr-dot" />
